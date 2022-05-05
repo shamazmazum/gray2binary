@@ -1,4 +1,5 @@
 # gray2binary
+[![CI](https://github.com/shamazmazum/gray2binary/actions/workflows/build.yml/badge.svg)](https://github.com/shamazmazum/gray2binary/actions/workflows/build.yml)
 
 Tool for creating black&white segmented images from grayscale images of porous
 material. This tool uses watershed segmentation algorithm.
