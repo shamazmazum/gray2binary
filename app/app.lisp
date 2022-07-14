@@ -52,11 +52,15 @@
         (destructuring-bind (input-name output-name)
             arguments
           (check-output-type output-name)
-          (let ((image (imago:read-image input-name)))
+          (let ((image (imago:convert-to-grayscale
+                        (imago:read-image input-name))))
             (multiple-value-bind (low-threshold high-threshold)
                 (gray2binary:threshold-levels
                  image
                  (getf options :quantile 1/6))
+              (format *standard-output*
+                      "low-threshold=~d high-threshold=~d (when not overriden by -l or -h)~%"
+                      low-threshold high-threshold)
               (imago:write-image
                (gray2binary:gray->binary
                 image
