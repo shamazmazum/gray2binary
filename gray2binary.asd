@@ -26,8 +26,7 @@
                (:file "app"))
   :depends-on (:gray2binary
                :imago
-               :unix-opts
-               :parse-number)
+               :command-line-parse)
   :build-operation program-op
   :build-pathname "gray2binary"
-  :entry-point "gray2binary-app:main")
+  :entry-point "gray2binary/app:main")
