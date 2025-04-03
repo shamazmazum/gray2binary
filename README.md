@@ -5,21 +5,22 @@ Tool for creating black&white segmented images from grayscale images of porous
 material. This tool uses watershed segmentation algorithm.
 
 ~~~~
-Usage: gray2binary [-l|--low LOW] [-h|--high HIGH] [-q|--quantile Q] INPUT-NAME OUTPUT-NAME
+Usage: gray2binary INPUT OUTPUT LOW HIGH
 
-Available options:
-  -l, --low LOW    Pixels below this threshold are labeled as void
-  -h, --high HIGH  Pixels above this threshold are labeled as solids
-  -q, --quantile Q Q-th and (1-Q)-th quantiles for void and solid thresholds
+Description of arguments
+HIGH       Threshold for the white phase
+LOW        Threshold for the black phase
+OUTPUT     Output picture
+INPUT      Input picture
 ~~~~
 
-Options `-q`, `-l` and `-h` can be used for tuning thresholds for black (void)
-and white (solid) areas.
+The third and the fourth arguments can be used for tuning thresholds for black
+(void) and white (solid) areas.
 
 ## Caveats
 
 * Portable bitmap is the only output format supported at the moment.
-* Some fine tuning of `-l` and `-h` parameters may be required to get a good result.
+* Some fine tuning of arguments may be required to get a good result.
 * Processing of big images can take some time.
 
 ## Examples
